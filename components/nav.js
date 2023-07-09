@@ -1,9 +1,10 @@
 import Link from 'next/link';
+import { signOut } from 'next-auth/react';
 
 export default function Nav() {
 	return (
-		<aside className='p-4 bg-gray-900 text-slate-100'>
-			<Link href={'/'} className='flex mb-4 gap-1'>
+		<aside className='p-4 pr-0 bg-gray-900 text-slate-100'>
+			<Link href={'/'} className='flex mb-4 mr-4 gap-1'>
 				<svg
 					xmlns='http://www.w3.org/2000/svg'
 					fill='none'
@@ -36,7 +37,7 @@ export default function Nav() {
 					</svg>
 					Dashbroard
 				</Link>
-				<Link href={'/'} className='nav-option'>
+				<Link href={'/products'} className='nav-option'>
 					<svg
 						xmlns='http://www.w3.org/2000/svg'
 						fill='none'
@@ -57,7 +58,7 @@ export default function Nav() {
 					</svg>
 					Products
 				</Link>
-				<Link href={'/'} className='nav-option'>
+				<Link href={'/orders'} className='nav-option'>
 					<svg
 						xmlns='http://www.w3.org/2000/svg'
 						fill='none'
@@ -73,7 +74,7 @@ export default function Nav() {
 					</svg>
 					Orders
 				</Link>
-				<Link href={'/'} className='nav-option'>
+				<Link href={'/settings'} className='nav-option'>
 					<svg
 						xmlns='http://www.w3.org/2000/svg'
 						fill='none'
@@ -95,6 +96,11 @@ export default function Nav() {
 					Settings
 				</Link>
 			</nav>
+			<button
+				onClick={() => signOut()}
+				className='w-max mt-4 px-3 py-1.5 text-black font-semibold bg-slate-200 rounded-lg'>
+				Sign out
+			</button>
 		</aside>
 	);
 }

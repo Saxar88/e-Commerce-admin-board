@@ -4,6 +4,6 @@
 
 @layer components {
 	.nav-option {
-		@apply flex gap-1;
+		@apply flex gap-1 p-1 active:bg-gray-900;
 	}
 }
